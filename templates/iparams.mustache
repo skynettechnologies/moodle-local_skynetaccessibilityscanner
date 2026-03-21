@@ -1,0 +1,303 @@
+{{!
+    @template local_skynetaccessibilityscanner/iparams
+
+    Accessibility widget settings page.
+
+    Example context (json):
+    {
+        "username": "example.com",
+        "email": "no-reply@example.com",
+
+        "positions": [
+            { "value": "top_left", "label": "Top left", "checked": false },
+            { "value": "bottom_right", "label": "Bottom right", "checked": true }
+        ],
+
+        "icon_types": [
+            {
+                "value": "aioa-icon-type-1",
+                "label": "Icon type 1",
+                "image": "https://example.com/icon.svg",
+                "checked": true
+            }
+        ],
+
+        "icon_sizes": [
+            {
+                "id": "edit-size-medium",
+                "value": "aioa-medium-icon",
+                "label": "Medium",
+                "image": "https://example.com/icon.svg",
+                "size": 65,
+                "checked": true
+            }
+        ],
+
+        "custom_size_toggle_title": "Enable custom size",
+        "custom_size_label": "Custom size",
+        "select_exact_size_label": "Select exact size",
+        "select_exact_size_desc": "Choose an exact icon size in pixels",
+        "select_icon_size_desktop_label": "Select icon size (desktop)",
+        "widget_icon_size_custom": 65,
+        "px_label": "Pixels"
+    }
+}}
+
+<body class="layout-no-sidebars has-featured-top page-node-1860 path-node node--type-page scrolled scrolldown">
+<script>
+    window.AIOA_PIX_BASE = "{{pix_base_url}}";
+</script>
+<!-- Section 1 -->
+<div id="section1">
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+        <div>
+            <div>
+                <div id="main-wrapper" class="layout-main-wrapper clearfix">
+                    <div id="main" class="container">
+                        <div class="row row-offcanvas row-offcanvas-left clearfix">
+                            <main class="main-content col" id="content" role="main">
+                                <section class="section">
+                                    <div id="main-content" tabindex="-1"></div>
+                                    <div id="block-skynettechnologies-content" class="block block-system block-system-main-block">
+                                        <div class="content">
+                                            <article data-history-node-id="529" class="node node--type-page node--view-mode-full clearfix">
+                                                <div class="node__content clearfix">
+                                                    <div class="scanning-monitoring-app">
+                                                        <div class="scans">
+                                                            <p class="title">{{#str}}my-scan, local_skynetaccessibilityscanner{{/str}}</p>
+
+                                                            <!-- Status Section -->
+                                                            <section class="status">
+                                                                <div class="page-background"></div>
+
+                                                                <div class="status-card">
+                                                                    <span class="status-title">{{#str}}scan-score, local_skynetaccessibilityscanner{{/str}}</span>
+                                                                    <span class="status-value status-progress" id="scan-score" style="cursor:pointer;">
+                                                                        {{#str}}loading, local_skynetaccessibilityscanner{{/str}}
+                                                                    </span>
+                                                                </div>
+
+                                                                <div class="status-card">
+                                                                    <span class="status-title">{{#str}}last-scanned, local_skynetaccessibilityscanner{{/str}}</span>
+                                                                    <span class="status-value status-inactive" id="last-scanned">
+                                                                        {{#str}}loading, local_skynetaccessibilityscanner{{/str}}
+                                                                    </span>
+                                                                </div>
+                                                            </section>
+
+                                                            <hr class="divider">
+
+                                                            <!-- Plan Section -->
+                                                            <section class="plan">
+                                                                <div class="page-background"></div>
+                                                                <div class="plan-info">
+                                                                    <div class="plans-left">
+                                                                        <span class="plan-type free">
+                                                                            <div class="icon-circle">
+                                                                                <img src="{{img_url_round}}" alt="" height="20" width="20">
+                                                                            </div>
+                                                                            <span id="plan-name">{{#str}}loading, local_skynetaccessibilityscanner{{/str}}</span>
+                                                                            <span class="plan-desc">
+                                                                                <ul>
+                                                                                    <li id="plan-pages"></li>
+                                                                                </ul>
+                                                                            </span>
+                                                                            <span class="plan-badge" id="plan-badge" style="color: green; background: #D1FFD3;">
+                                                                                {{#str}}current-plan, local_skynetaccessibilityscanner{{/str}}
+                                                                            </span>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="plans-right">
+                                                                        <span class="plan-renewal" id="plan-renewal">
+                                                                            <!-- Renewal/Expiry date will be populated here -->
+                                                                        </span>
+                                                                        <button class="cancel-btn" id="cancel-subscription-btn">
+                                                                            {{#str}}loading, local_skynetaccessibilityscanner{{/str}}
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+
+                                                            <!-- Pricing Section -->
+                                                            <section class="pricing">
+                                                                <div class="page-background"></div>
+                                                                <div class="billing-toggle">
+                                                                    <span class="label active" id="monthly-label">{{#str}}pay-monthly, local_skynetaccessibilityscanner{{/str}}</span>
+                                                                    <label class="switch">
+                                                                        <input type="checkbox" id="billing-toggle">
+                                                                        <span class="slider"></span>
+                                                                    </label>
+                                                                    <span class="label" id="annual-label">{{#str}}pay-annually, local_skynetaccessibilityscanner{{/str}}</span>
+                                                                    <span class="save">{{#str}}save-20, local_skynetaccessibilityscanner{{/str}}</span>
+                                                                </div>
+
+                                                                <!-- Monthly Plans -->
+                                                                <div id="monthlyclass" class="monthlyclass">
+                                                                    <div class="pricing-tiers" id="monthly-plans">
+                                                                        <!-- Plans will be dynamically inserted here -->
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Annual Plans -->
+                                                                <div id="annualclass" class="annualclass">
+                                                                    <div class="pricing-tiers" id="annual-plans">
+                                                                        <!-- Plans will be dynamically inserted here -->
+                                                                    </div>
+                                                                </div>
+
+                                                                <p class="pricing-contact">
+                                                                    Are you looking for a custom plan or Enterprise plan? Contact us
+                                                                    <a href="mailto:hello@skynettechnologies.com">hello@skynettechnologies.com</a>
+                                                                </p>
+                                                            </section>
+
+                                                            <hr class="divider">
+
+                                                            <!-- Help Section -->
+                                                            <section class="help">
+                                                                <p class="help-text">
+                                                                    <strong>{{#str}}facing-any-issues, local_skynetaccessibilityscanner{{/str}}</strong>
+                                                                    {{#str}}report-a-problem-msg, local_skynetaccessibilityscanner{{/str}}
+                                                                </p>
+                                                                <a href="https://www.skynettechnologies.com/report-accessibility-problem" class="help-btn">{{#str}}report-a-problem, local_skynetaccessibilityscanner{{/str}}</a>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </section>
+                            </main>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Section 1 -->
+
+<!-- Section 2 - Violation Report -->
+<div id="section2" style="display:none;">
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+        <div>
+            <div>
+                <div id="main-wrapper" class="layout-main-wrapper clearfix">
+                    <div id="main" class="container">
+                        <div class="row row-offcanvas row-offcanvas-left clearfix">
+                            <main class="main-content col" id="content" role="main">
+                                <section class="section">
+                                    <div id="main-content" tabindex="-1"></div>
+                                    <div id="block-skynettechnologies-content" class="block block-system block-system-main-block">
+                                        <div class="content">
+                                            <article data-history-node-id="529" class="node node--type-page node--view-mode-full clearfix">
+                                                <div class="node__content clearfix">
+                                                    <div class="scanning-monitoring-app">
+                                                        <div class="accessibility-report">
+                                                            <div class="report-date">
+                                                                <label for="report-date">{{#str}}report-date, local_skynetaccessibilityscanner{{/str}} <strong id="report-date-value"></strong></label>
+                                                            </div>
+
+                                                            <section class="top-section">
+                                                                <div class="card score-card">
+                                                                    <h3>Accessibility Score</h3>
+                                                                    <div class="accessibility-score">
+                                                                        <div class="score-value" id="accessibility-score"></div>
+                                                                        <span class="status-text not-compliant" id="compliance-status">{{#str}}not-compliant, local_skynetaccessibilityscanner{{/str}}</span>
+                                                                    </div>
+                                                                    <div class="progress-bar">
+                                                                        <div class="progress-fill" id="accessibility-progress" style="width: 0%;"></div>
+                                                                    </div>
+                                                                    <p class="note">
+                                                                    {{#str}}score-msg, local_skynetaccessibilityscanner{{/str}}
+                                                                    </p>
+                                                                </div>
+
+                                                                <!-- Web Pages Scanned -->
+                                                                <div class="card pages-card">
+                                                                    <h3>Web Pages Scanned</h3>
+                                                                    <div class="pages-value" id="pages-scanned">0</div>
+                                                                    <div class="progress-bar">
+                                                                        <div class="progress-fill" id="pages-progress" style="width: 0%;"></div>
+                                                                    </div>
+                                                                    <p class="note" id="pages-note"></p>
+                                                                </div>
+                                                            </section>
+
+                                                            <!-- WCAG Section -->
+                                                            <section class="wcag-section">
+                                                                <div class="wcag-header">
+                                                                    <h3>WCAG 2.1/2.2</h3>
+                                                                    <button id="view-all-violations" class="view-btn">
+                                                                        {{#str}}view-all-violations, local_skynetaccessibilityscanner{{/str}}
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+                                                                            <path d="M6 5.00002C6 5.17924 5.92797 5.35843 5.78422 5.49507L1.25832 9.79486C0.970413 10.0684 0.503627 10.0684 0.21584 9.79486C-0.0719468 9.52145 -0.0719468 9.07807 0.21584 8.80452L4.22061 5.00002L0.21598 1.19549C-0.0718073 0.921968 -0.0718073 0.478632 0.21598 0.205242C0.503767 -0.0684128 0.970553 -0.0684128 1.25846 0.205242L5.78436 4.50496C5.92814 4.64166 6 4.82086 6 5.00002Z" fill="white" />
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+
+                                                                <!-- Checks Grid -->
+                                                                <div class="checks-grid">
+                                                                    <div class="check-card failed">
+                                                                        <span class="check-value" id="failed-checks"></span>
+                                                                        <span class="check-label">{{#str}}failed-checks, local_skynetaccessibilityscanner{{/str}}</span>
+                                                                    </div>
+
+                                                                    <div class="check-card passed">
+                                                                        <span class="check-value" id="passed-checks"></span>
+                                                                        <span class="check-label">{{#str}}passed-checks, local_skynetaccessibilityscanner{{/str}}</span>
+                                                                    </div>
+
+                                                                    <div class="check-card na">
+                                                                        <span class="check-value" id="na-checks"></span>
+                                                                        <span class="check-label">{{#str}}n-a-checks, local_skynetaccessibilityscanner{{/str}}</span>
+                                                                    </div>
+                                                                </div>
+
+                                                                <hr class="divider">
+
+                                                                <!-- Violations Grid -->
+                                                                <div class="violations-grid">
+                                                                    <div class="violation-card">
+                                                                        <span class="violation-title">{{#str}}level-a, local_skynetaccessibilityscanner{{/str}}</span>
+                                                                        <span class="violation-count">
+                                                                            <span id="level-a-violations"></span> {{#str}}violations, local_skynetaccessibilityscanner{{/str}}
+                                                                        </span>
+                                                                    </div>
+
+                                                                    <div class="violation-card">
+                                                                        <span class="violation-title">{{#str}}level-aa, local_skynetaccessibilityscanner{{/str}}</span>
+                                                                        <span class="violation-count">
+                                                                            <span id="level-aa-violations"></span> {{#str}}violations, local_skynetaccessibilityscanner{{/str}}
+                                                                        </span>
+                                                                    </div>
+
+                                                                    <div class="violation-card">
+                                                                        <span class="violation-title">{{#str}}level-aaa, local_skynetaccessibilityscanner{{/str}}</span>
+                                                                        <span class="violation-count">
+                                                                            <span id="level-aaa-violations"></span> {{#str}}violations, local_skynetaccessibilityscanner{{/str}}
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                            <div>
+                                                                <button class="back-btn" id="back-btn">{{#str}}back, local_skynetaccessibilityscanner{{/str}}</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </section>
+                            </main>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Section 2 -->
+</body>
