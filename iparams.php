@@ -37,12 +37,45 @@ $PAGE->set_pagelayout('admin');
 $PAGE->set_title(get_string('pluginname', 'local_skynetaccessibilityscanner'));
 $PAGE->set_heading(get_string('pluginname', 'local_skynetaccessibilityscanner'));
 
-$PAGE->requires->css('/local/skynetaccessibilityscanner/styles.css');
 $PAGE->requires->jquery();
 $PAGE->requires->js(new moodle_url('/local/skynetaccessibilityscanner/iparams.js'));
 
 $pixbaseurl = $OUTPUT->image_url('round', 'local_skynetaccessibilityscanner')->out(false);
 $pixbaseurl = preg_replace('/round$/', '', $pixbaseurl);
+
+$PAGE->requires->js_call_amd(
+    'local_skynetaccessibilityscanner/iparams',
+    'init',
+    [
+        'pixBaseUrl' => $pixbaseurl,
+        'strings' => [
+            'violations' => get_string('violations', 'local_skynetaccessibilityscanner'),
+            'n-a' => get_string('n-a', 'local_skynetaccessibilityscanner'),
+            'not-started' => get_string('not-started', 'local_skynetaccessibilityscanner'),
+            'scanning' => get_string('scanning', 'local_skynetaccessibilityscanner'),
+            'page' => get_string('pages', 'local_skynetaccessibilityscanner'),
+            'yourPlanHasExpired' => get_string('your-plan-has-expired', 'local_skynetaccessibilityscanner'),
+            'freePlan' => get_string('free-plan', 'local_skynetaccessibilityscanner'),
+            'scanUpTo' => get_string('scan-up-to', 'local_skynetaccessibilityscanner'),
+            'plan' => get_string('plan', 'local_skynetaccessibilityscanner'),
+            'cancelledPlan' => get_string('cancelled-plan', 'local_skynetaccessibilityscanner'),
+            'currentPlan' => get_string('current-plan', 'local_skynetaccessibilityscanner'),
+            'expiresOn' => get_string('expires-on', 'local_skynetaccessibilityscanner'),
+            'renewsOn' => get_string('renews-on', 'local_skynetaccessibilityscanner'),
+            'expiredOn' => get_string('expired-on', 'local_skynetaccessibilityscanner'),
+            'renewPlan' => get_string('renew-plan', 'local_skynetaccessibilityscanner'),
+            'cancelSubscription' => get_string('cancel-subscription', 'local_skynetaccessibilityscanner'),
+            'monthly' => get_string('monthly', 'local_skynetaccessibilityscanner'),
+            'year' => get_string('year', 'local_skynetaccessibilityscanner'),
+            'upgrade' => get_string('upgrade', 'local_skynetaccessibilityscanner'),
+            'cancel' => get_string('cancel', 'local_skynetaccessibilityscanner'),
+            'notCompliant' => get_string('not-compliant', 'local_skynetaccessibilityscanner'),
+            'semiCompliant' => get_string('semi-compliant', 'local_skynetaccessibilityscanner'),
+            'compliant' => get_string('compliant', 'local_skynetaccessibilityscanner'),
+            'pagesScannedOutOf' => get_string('pages-scanned-out-of', 'local_skynetaccessibilityscanner'),
+        ]
+    ]
+);
 
 $templatecontext = [
     'img_url_round' => $OUTPUT->image_url('round', 'local_skynetaccessibilityscanner')->out(),

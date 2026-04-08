@@ -25,13 +25,8 @@ defined('MOODLE_INTERNAL') || die();
 
 if ($hassiteconfig) {
     $ADMIN->add('localplugins', new admin_externalpage(
-        'local_skynetaccessibilityscanner', // MUST match
+        'local_skynetaccessibilityscanner',
         get_string('pluginname', 'local_skynetaccessibilityscanner'),
         new moodle_url('/local/skynetaccessibilityscanner/iparams.php')
     ));
 }
-/*if ($hassiteconfig) {
-    // Settings will be NULL.
-    $settings = new admin_settingpage('local_skynetaccessibilityscanner', get_string('pluginname', 'local_skynetaccessibilityscanner'));
-    $ADMIN->add('localplugins', $settings);
-}*/

@@ -25,6 +25,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_skynetaccessibilityscanner';
 $plugin->release = '1.0.0';
-$plugin->version  = 2026032100;
+$plugin->version  = 2026040700;
 $plugin->requires = 2022041900;
 $plugin->maturity = MATURITY_STABLE;

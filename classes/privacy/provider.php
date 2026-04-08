@@ -24,9 +24,6 @@
 
 namespace local_skynetaccessibilityscanner\privacy;
 
-use core_privacy\local\request\writer;
-use core_privacy\local\request\exporter;
-use core_privacy\local\request\user_data;
 use core_privacy\local\metadata\collection;
 
 /**
@@ -35,7 +32,7 @@ use core_privacy\local\metadata\collection;
  * @copyright 2024 Rajesh Bhimani <developer3@skynettechnologies.com>
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class provider implements \core_privacy\local\metadata\provider {
+class provider implements widget_default_features, \core_privacy\local\metadata\provider {
     /**
      * Returns metadata about the personal data this plugin stores.
      *
@@ -55,31 +52,17 @@ class provider implements \core_privacy\local\metadata\provider {
         );
         return $collection;
     }
+    
     /**
-     * Export user data.
+     * Explain why no data is stored.
      *
-     * @param int $userid The user whose data you want to export
-     * @return void
+     * @return string
      */
-    public static function export_user_data($userid) {
-        global $DB;
-        $user = $DB->get_record('user', ['id' => $userid], 'id, email, firstname, lastname');
-        if ($user) {
-            writer::export_user_data($userid, 'local_skynetaccessibilityscanner', 'name', $user->firstname . ' ' . $user->lastname);
-            writer::export_user_data($userid, 'local_skynetaccessibilityscanner', 'email', $user->email);
-            writer::export_user_data($userid, 'local_skynetaccessibilityscanner', 'website', $user->email);
-        }
+    public static function get_reason(): string {
+        return 'privacy:metadata';
     }
-    /**
-     * Delete user data.
-     *
-     * @param int $userid The user whose data to delete
-     * @return void
-     */
-    public static function delete_user_data($userid) {
-        global $DB;
-        $DB->delete_records('local_skynetaccessibilityscanner_data', ['userid' => $userid]);
-    }
+    
+    
     /**
      * Returns the link to the external location where user data is sent.
      *

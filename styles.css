@@ -1,32 +1,53 @@
+/* This file is part of Moodle - http://moodle.org/
+ *
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Moodle is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Skynet Accessibility Scanner Styles.
+ *
+ * @package local_skynetaccessibilityscanner
+ * @copyright  2024 Rajesh Bhimani <developer3@skynettechnologies.com>
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 .scanning-monitoring-app {
     max-width: 1280px;
     margin: 0 auto;
     font-family: 'rubik', sans-serif;
-
-@media only screen and (max-width: 512px) {
-    padding: 0;
 }
 
-.scans {
+@media only screen and (max-width: 512px) {
+    .scanning-monitoring-app {
+        padding: 0;
+    }
+}
+.scanning-monitoring-app .scans {
     display: flex;
     flex-direction: column;
     position: relative;
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-
-.page-background {
+}
+.scanning-monitoring-app .scans .page-background {
     position: absolute;
     opacity: 0.3;
 }
-
-.title {
+.scanning-monitoring-app .scans .title {
     font-size: 32px;
     font-weight: 500;
     margin-bottom: 20px;
 }
-
-.status {
+.scanning-monitoring-app .scans .status {
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -36,16 +57,20 @@
     border-radius: 10px;
     margin-bottom: 30px;
     background-color: #e7e8fe;
+}
 
 @media only screen and (min-width: 300px) and (max-width: 402px) {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    .scanning-monitoring-app .scans .status {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
 }
 
 @media only screen and (max-width: 450px) {
-    grid-template-columns: repeat(auto-fit, minmax(122px, 1fr));
+    .scanning-monitoring-app .scans .status {
+        grid-template-columns: repeat(auto-fit, minmax(122px, 1fr));
+    }
 }
-
-.page-background {
+.scanning-monitoring-app .scans .status .page-background {
     z-index: -1;
     background-size: cover;
     width: 100%;
@@ -54,119 +79,106 @@
     left: 0;
     border-radius: 10px;
 }
-
-.status-card {
+.scanning-monitoring-app .scans .status .status-card {
     background: #fff;
     border-radius: 5px;
     padding: 20px;
     display: flex;
     gap: 0.25rem;
-    border: 0.5px solid #B776FF80;
+    border: 0.5px solid #b776ff;
     align-items: center;
     justify-content: space-between;
-
-@media only screen and (max-width: 512px) {
-    flex-direction: column;
 }
 
-.status-title {
+@media only screen and (max-width: 512px) {
+    .scanning-monitoring-app .scans .status .status-card {
+        flex-direction: column;
+    }
+}
+.scanning-monitoring-app .scans .status .status-card .status-title {
     font-size: 20px;
     font-weight: 500;
     color: #420083;
+}
 
 @media only screen and (max-width: 912px) {
-    font-size: 16px;
+    .scanning-monitoring-app .scans .status .status-card .status-title {
+        font-size: 16px;
+    }
 }
-}
-
-.status-value {
+.scanning-monitoring-app .scans .status .status-card .status-value {
     font-size: 15px;
     font-weight: 400;
-
-.status-process {
+}
+.scanning-monitoring-app .scans .status .status-card .status-value .status-process {
     color: #420083;
 }
-
-a {
-    color: #000000;
+.scanning-monitoring-app .scans .status .status-card .status-value a {
+    color: #000;
 }
-
-span {
+.scanning-monitoring-app .scans .status .status-card .status-value span {
     font-size: 36px;
     font-weight: 700;
 }
 
 @media only screen and (max-width: 912px) {
-    font-size: 14px;
+    .scanning-monitoring-app .scans .status .status-card .status-value {
+        font-size: 14px;
+    }
 }
-
-img {
+.scanning-monitoring-app .scans .status .status-card .status-value img {
     margin-right: 5px;
 }
-
-.progress-bar {
+.scanning-monitoring-app .scans .status .status-card .status-value .progress-bar {
     width: 102px;
     height: 6px;
-    background: #E8D5FF;
+    background: #e8d5ff;
     border-radius: 3px;
     margin-top: 5px;
-
-.progress-fill {
+}
+.scanning-monitoring-app .scans .status .status-card .status-value .progress-bar .progress-fill {
     height: 100%;
     background: #420083;
     border-radius: 3px;
 }
-}
-
-.vilolations {
+.scanning-monitoring-app .scans .status .status-card .status-value .vilolations {
     font-size: 15px;
     font-weight: 400;
-    color: #000000;
+    color: #000;
     margin-top: 10px;
-
-span {
+}
+.scanning-monitoring-app .scans .status .status-card .status-value .vilolations span {
     font-size: 15px;
     font-weight: 500;
-    color: #9F0000;
+    color: #9f0000;
 }
-}
-
-}
-
-.status-progress {
-    color: #9F0000;
+.scanning-monitoring-app .scans .status .status-card .status-progress {
+    color: #9f0000;
     font-weight: 700;
+}
 
 @media only screen and (max-width: 450px) {
-    text-align: center;
+    .scanning-monitoring-app .scans .status .status-card .status-progress {
+        text-align: center;
+    }
 }
-
-.vilolations {
-span {
+.scanning-monitoring-app .scans .status .status-card .status-progress .vilolations span {
     font-weight: 700;
-
 }
-
-}
-}
-}
-}
-
-.divider {
+.scanning-monitoring-app .scans .divider {
     border: none;
-    border-top: 1px solid #EAD5FF;
+    border-top: 1px solid #ead5ff;
     margin-bottom: 30px;
     margin-top: 0;
 }
-
-.plan {
+.scanning-monitoring-app .scans .plan {
     border: 1px solid #420083;
     border-radius: 10px;
     padding: 30px;
     margin-bottom: 10px;
     position: relative;
-
-.page-background {
+}
+.scanning-monitoring-app .scans .plan .page-background {
     opacity: 0.3;
     z-index: -1;
     background-size: cover;
@@ -176,37 +188,40 @@ span {
     top: 0;
     left: 0;
     border-radius: 10px;
-    background-color: #F2EFEA;
+    background-color: #f2efea;
 }
-
-.plan-info {
+.scanning-monitoring-app .scans .plan .plan-info {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-
-@media only screen and (max-width: 1199px) {
-    justify-content: center;
 }
 
-.plans-left {
+@media only screen and (max-width: 1199px) {
+    .scanning-monitoring-app .scans .plan .plan-info {
+        justify-content: center;
+    }
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left {
     display: flex;
     align-items: center;
     justify-content: center;
-
-@media only screen and (max-width: 912px) {
-    flex-direction: column;
-    margin-bottom: 20px;
 }
 
-.plan-type {
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .plan .plan-info .plans-left {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-type {
     font-size: 20px;
     font-weight: 700;
     display: flex;
     align-items: center;
-
-.icon-circle {
-    background-color: #F7F1FF;
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-type .icon-circle {
+    background-color: #f7f1ff;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -215,55 +230,52 @@ span {
     align-items: center;
     margin-right: 15px;
 }
-}
-
-.plan-desc {
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-desc {
     font-size: 16px;
     font-weight: 400;
-
-ul {
+}
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-desc ul {
     margin-bottom: 0;
 }
-}
-
-.plan-badge {
-    background: #D1FFD3;
-    color: #006D04;
+.scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-badge {
+    background: #d1ffd3;
+    color: #006d04;
     padding: 6px 15px;
     border-radius: 5px;
     font-size: 16px;
     font-weight: 500;
     margin-left: 20px;
+}
 
 @media only screen and (max-width: 912px) {
-    margin-top: 10px;
-    margin-left: 0;
-}
-}
+    .scanning-monitoring-app .scans .plan .plan-info .plans-left .plan-badge {
+        margin-top: 10px;
+        margin-left: 0;
+    }
 }
 
-.plans-right {
 @media only screen and (max-width: 912px) {
-    text-align: center;
+    .scanning-monitoring-app .scans .plan .plan-info .plans-right {
+        text-align: center;
+    }
 }
-
-.plan-renewal {
+.scanning-monitoring-app .scans .plan .plan-info .plans-right .plan-renewal {
     font-size: 16px;
     font-weight: 500;
     color: #420083;
+}
 
 @media only screen and (max-width: 912px) {
-    font-size: 14px;
+    .scanning-monitoring-app .scans .plan .plan-info .plans-right .plan-renewal {
+        font-size: 14px;
+    }
 }
-
-strong {
+.scanning-monitoring-app .scans .plan .plan-info .plans-right .plan-renewal strong {
     color: #030104;
 }
-}
-
-.cancel-btn {
+.scanning-monitoring-app .scans .plan .plan-info .plans-right .cancel-btn {
     margin-left: 20px;
-    background: #9F0000;
+    background: #9f0000;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -271,17 +283,15 @@ strong {
     cursor: pointer;
     font-size: 16px;
     font-weight: 700;
+}
 
 @media only screen and (max-width: 912px) {
-    margin-left: 0;
-    margin-top: 10px;
+    .scanning-monitoring-app .scans .plan .plan-info .plans-right .cancel-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
 }
-}
-}
-}
-}
-
-.pricing {
+.scanning-monitoring-app .scans .pricing {
     border: 1px solid #420083;
     border-radius: 10px;
     padding: 20px;
@@ -291,30 +301,32 @@ strong {
     margin-bottom: 30px;
     position: relative;
     background-color: #e7e8fe;
-    .page-background {
-        opacity: 0.3;
-        z-index: -1;
-        background-size: cover;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        border-radius: 10px;
-        background-color: #F2EFEA;
-    }
-
-.billing-toggle {
+}
+.scanning-monitoring-app .scans .pricing .page-background {
+    opacity: 0.3;
+    z-index: -1;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background-color: #f2efea;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-
-@media only screen and (max-width: 912px) {
-    flex-direction: column;
 }
 
-.save {
-    background-color: #913BEF;
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .pricing .billing-toggle {
+        flex-direction: column;
+    }
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .save {
+    background-color: #913bef;
     border-radius: 20px;
     color: #fff;
     font-size: 16px;
@@ -322,30 +334,26 @@ strong {
     padding: 8px 16px;
     margin-left: 5px;
 }
-
-.label {
+.scanning-monitoring-app .scans .pricing .billing-toggle .label {
     font-weight: 700;
     font-size: 18px;
-    color: #000000;
-
-&.active {
-     color: #420083;
- }
+    color: #000;
 }
-
-.switch {
+.scanning-monitoring-app .scans .pricing .billing-toggle .label.active {
+    color: #420083;
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch {
     position: relative;
     display: inline-block;
     width: 40px;
     height: 20px;
-
-input {
+}
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
-
-.slider {
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch .slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -356,60 +364,52 @@ input {
     border: 2px solid #420083;
     border-radius: 34px;
     transition: 0.3s;
-
-&::before {
-     content: "";
-     position: absolute;
-     height: 14px;
-     width: 14px;
-     left: 3px;
-     bottom: 2px;
-     background-color: #420083;
-     border-radius: 50%;
-     transition: 0.3s;
- }
 }
-
-input:checked+.slider {
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch .slider::before {
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 2px;
     background-color: #420083;
-
-&::before {
-     transform: translateX(18px);
-     background-color: white;
- }
+    border-radius: 50%;
+    transition: 0.3s;
 }
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch input:checked + .slider {
+    background-color: #420083;
 }
+.scanning-monitoring-app .scans .pricing .billing-toggle .switch input:checked + .slider::before {
+    transform: translateX(18px);
+    background-color: white;
 }
-
-.pricing-tiers {
+.scanning-monitoring-app .scans .pricing .pricing-tiers {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
-
-.tier {
-    background: #ffffff;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier {
+    background: #fff;
     border: 1px solid;
     border-radius: 10px;
     text-align: center;
     padding: 20px 30px;
     display: flex;
     flex-direction: column;
-
-.pricing-top {
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-top {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.pricing-header {
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-header {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     margin-right: 10px;
 }
-
-.icon-circle {
-    background-color: #F7F1FF;
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .icon-circle {
+    background-color: #f7f1ff;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -417,65 +417,54 @@ input:checked+.slider {
     justify-content: center;
     align-items: center;
 }
-
-.pricing-info {
-.tier-title {
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-info .tier-title {
     font-weight: 400;
     font-size: 16px;
     margin-bottom: 0;
     text-align: left;
 }
-
-.tier-pages {
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-info .tier-pages {
     font-weight: 700;
     font-size: 20px;
     margin-bottom: 0;
 }
-}
-
-.pricing-divider {
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-divider {
     margin: 20px 0;
 }
-
-.pricing-body {
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body {
     text-align: left;
     margin-bottom: 20px;
-
-.old-price {
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body .old-price {
     position: relative;
     display: inline-block;
-    color: #666666;
+    color: #666;
     font-size: 14px;
     font-weight: 400;
     margin: 0;
-
-&::after {
-     content: "";
-     position: absolute;
-     top: 43%;
-     left: -5%;
-     width: 110%;
-     height: 2px;
-     background-color: #CD0000;
-     transform: rotate(-14deg);
-     transform-origin: center;
- }
 }
-
-.new-price {
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body .old-price::after {
+    content: "";
+    position: absolute;
+    top: 43%;
+    left: -5%;
+    width: 110%;
+    height: 2px;
+    background-color: #cd0000;
+    transform: rotate(-14deg);
+    transform-origin: center;
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body .new-price {
     font-size: 24px;
     font-weight: 700;
     color: #420083;
     margin: 0;
-
-.per-year {
+}
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .pricing-body .new-price .per-year {
     font-size: 1rem;
     font-weight: 400;
 }
-}
-}
-
-.upgrade-btn {
+.scanning-monitoring-app .scans .pricing .pricing-tiers .tier .upgrade-btn {
     background: #420083;
     color: white;
     border: none;
@@ -485,65 +474,65 @@ input:checked+.slider {
     font-size: 16px;
     font-weight: 700;
 }
-}
-}
-
-.pricing-contact {
+.scanning-monitoring-app .scans .pricing .pricing-contact {
     text-align: center;
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 0;
-
-@media only screen and (max-width: 912px) {
-    font-size: 14px;
 }
 
-a {
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .pricing .pricing-contact {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .scans .pricing .pricing-contact a {
     color: #420083;
     text-decoration: none;
     font-weight: 700;
 }
-}
-}
-
-.help {
-    background: #FFF2B6;
+.scanning-monitoring-app .scans .help {
+    background: #fff2b6;
     border-radius: 10px;
     padding: 33px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-@media only screen and (max-width: 912px) {
-    flex-direction: column;
-    text-align: center;
 }
 
-.help-text {
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .help {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.scanning-monitoring-app .scans .help .help-text {
     display: flex;
     flex-direction: column;
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 0;
-
-@media only screen and (max-width: 912px) {
-    font-size: 14px;
-    margin-bottom: 10px;
 }
 
-strong {
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .scans .help .help-text {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
+.scanning-monitoring-app .scans .help .help-text strong {
     font-size: 24px;
     font-weight: 700;
+}
 
 @media only screen and (max-width: 912px) {
-    font-size: 18px;
+    .scanning-monitoring-app .scans .help .help-text strong {
+        font-size: 18px;
+    }
 }
-}
-}
-
-.help-btn {
-    background: #FFC107;
-    color: #000000;
+.scanning-monitoring-app .scans .help .help-btn {
+    background: #ffc107;
+    color: #000;
     text-decoration: none;
     border: none;
     border-radius: 5px;
@@ -552,160 +541,146 @@ strong {
     font-size: 16px;
     font-weight: 700;
 }
-}
-}
-
-.accessibility-report {
+.scanning-monitoring-app .accessibility-report {
     max-width: 1280px;
     margin: 0 auto;
     font-family: 'Rubik', sans-serif;
     display: flex;
     flex-direction: column;
-
-.report-date {
+}
+.scanning-monitoring-app .accessibility-report .report-date {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 20px;
-
-select {
+}
+.scanning-monitoring-app .accessibility-report .report-date select {
     border: 1px solid #ccc;
     padding: 10px 15px;
     border-radius: 6px;
     padding-right: 50px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='black' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 0.5rem center;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     cursor: pointer;
 }
-}
-
-.top-section {
+.scanning-monitoring-app .accessibility-report .top-section {
     display: grid;
     gap: 10px;
-    border: 0.5px solid #D6D6D6;
-    background: #FFF;
+    border: 0.5px solid #d6d6d6;
+    background: #fff;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 10px;
     grid-template-columns: 2fr 1fr;
+}
 
 @media only screen and (max-width: 1200px) {
-    grid-template-columns: 1fr 1fr;
+    .scanning-monitoring-app .accessibility-report .top-section {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media only screen and (max-width: 992px) {
-    grid-template-columns: 1fr;
+    .scanning-monitoring-app .accessibility-report .top-section {
+        grid-template-columns: 1fr;
+    }
 }
-
-.card {
+.scanning-monitoring-app .accessibility-report .top-section .card {
     padding: 20px 30px;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-
-
-h3 {
+}
+.scanning-monitoring-app .accessibility-report .top-section .card h3 {
     font-size: 18px;
     font-weight: 700;
     color: #420083;
 }
-
-.accessibility-score {
+.scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
 
 @media only screen and (max-width: 500px) {
-    flex-direction: column;
-    margin-bottom: 20px;
+    .scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
 }
-
-.score-value {
+.scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score .score-value {
     font-size: 72px;
     font-weight: 700;
-    color: #000000;
+    color: #000;
 }
-
-.status-text {
+.scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score .status-text {
     font-size: 14px;
     font-weight: 500;
-    background: #FFF0F0;
+    background: #fff0f0;
     border-radius: 5px;
     padding: 6px 10px;
-
-&.not-compliant {
-     color: #9F0000;
- }
 }
+.scanning-monitoring-app .accessibility-report .top-section .card .accessibility-score .status-text.not-compliant {
+    color: #9f0000;
 }
-
-.pages-value {
+.scanning-monitoring-app .accessibility-report .top-section .card .pages-value {
     font-size: 72px;
     font-weight: 700;
-    color: #000000;
-
+    color: #000;
 }
-
-.progress-bar {
+.scanning-monitoring-app .accessibility-report .top-section .card .progress-bar {
     width: 100%;
     height: 6px;
-    background: #CAE8FF;
+    background: #cae8ff;
     border-radius: 3px;
-
-.progress-fill {
+}
+.scanning-monitoring-app .accessibility-report .top-section .card .progress-bar .progress-fill {
     height: 100%;
-    background: #4A6681;
+    background: #4a6681;
     border-radius: 3px;
 }
-}
-
-.note {
+.scanning-monitoring-app .accessibility-report .top-section .card .note {
     font-weight: 400;
     font-size: 14px;
 }
-}
-
-.card.score-card {
+.scanning-monitoring-app .accessibility-report .top-section .card.score-card {
     border-radius: 10px 0 0 10px;
     border: 0.5px solid rgba(183, 118, 255, 0.50);
     background: rgba(145, 59, 239, 0.02);
 }
-
-.card.pages-card {
+.scanning-monitoring-app .accessibility-report .top-section .card.pages-card {
     border-radius: 0 10px 10px 0;
     border: 0.5px solid rgba(183, 118, 255, 0.50);
     background: rgba(145, 59, 239, 0.02);
 }
-}
-
-.wcag-section {
+.scanning-monitoring-app .accessibility-report .wcag-section {
     background: #fff;
-    border: 0.5px solid #D6D6D6;
+    border: 0.5px solid #d6d6d6;
     border-radius: 10px;
     padding: 20px 20px 40px;
     display: flex;
     flex-direction: column;
-
-.wcag-header {
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .wcag-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-@media only screen and (max-width: 540px) {
-    flex-direction: column;
 }
 
-h3 {
+@media only screen and (max-width: 540px) {
+    .scanning-monitoring-app .accessibility-report .wcag-section .wcag-header {
+        flex-direction: column;
+    }
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .wcag-header h3 {
     font-size: 24px;
     font-weight: 700;
     color: #420083;
 }
-
-.view-btn {
+.scanning-monitoring-app .accessibility-report .wcag-section .wcag-header .view-btn {
     color: white;
     border: none;
     padding: 10px 15px;
@@ -715,116 +690,94 @@ h3 {
     border-radius: 5px;
     background: #420083;
     margin-bottom: 18px;
-
-svg {
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .wcag-header .view-btn svg {
     margin-left: 10px;
 }
-}
-}
-
-.checks-grid {
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
-
-
-.check-card {
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card {
     padding: 15px 30px;
     border-radius: 5px;
     border: 0.5px solid rgba(183, 118, 255, 0.50);
     background: rgba(145, 59, 239, 0.02);
     text-align: left;
-
-.check-value {
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card .check-value {
     font-size: 36px;
     font-weight: 700;
     display: block;
 }
-
-.check-label {
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card .check-label {
     font-size: 16px;
     font-weight: 500;
     margin-top: 5px;
 }
-
-&.failed .check-label {
-     color: #9F0000;
- }
-
-&.passed .check-label {
-     color: #1F7B22;
- }
-
-&.na .check-label {
-     color: #787878;
- }
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card.failed .check-label {
+    color: #9f0000;
 }
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card.passed .check-label {
+    color: #1f7b22;
 }
-
-.divider {
+.scanning-monitoring-app .accessibility-report .wcag-section .checks-grid .check-card.na .check-label {
+    color: #787878;
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .divider {
     border: none;
-    border-top: 1px solid #E6E6E6;
+    border-top: 1px solid #e6e6e6;
     margin: 30px 20px;
 }
-
-
-.violations-grid {
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
-
-.violation-card {
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid .violation-card {
     border: 1px solid #ddd;
     padding: 26px 30px;
     text-align: center;
     border-radius: 5px;
-    background: #EFF7FF;
+    background: #eff7ff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-.violation-title {
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid .violation-card .violation-title {
     font-weight: 700;
     font-size: 24px;
     display: block;
 }
-
-.violation-count {
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid .violation-card .violation-count {
     display: flex;
     flex-direction: column;
     font-size: 16px;
     font-weight: 400;
-
-span {
+}
+.scanning-monitoring-app .accessibility-report .wcag-section .violations-grid .violation-card .violation-count span {
     font-weight: 600;
     font-size: 24px;
 }
-}
-}
-}
-}
-}
-
-.accessibility-scanning {
+.scanning-monitoring-app .accessibility-scanning {
     display: flex;
     flex-direction: column;
     position: relative;
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-
-.page-background {
+}
+.scanning-monitoring-app .accessibility-scanning .page-background {
     position: absolute;
     opacity: 0.3;
 }
-
-.title {
+.scanning-monitoring-app .accessibility-scanning .title {
     font-size: 32px;
     font-weight: 500;
     margin-bottom: 20px;
 }
-
-.status {
+.scanning-monitoring-app .accessibility-scanning .status {
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -833,8 +786,8 @@ span {
     border: 1px solid #420083;
     border-radius: 10px;
     margin-bottom: 30px;
-
-.page-background {
+}
+.scanning-monitoring-app .accessibility-scanning .status .page-background {
     opacity: 0.3;
     z-index: -1;
     background-size: cover;
@@ -843,225 +796,92 @@ span {
     top: 0;
     left: 0;
     border-radius: 10px;
-    background-color: #F2EFEA;
+    background-color: #f2efea;
 }
-
-.status-card {
+.scanning-monitoring-app .accessibility-scanning .status .status-card {
     background: #fff;
     border-radius: 5px;
     padding: 20px;
     display: flex;
     gap: 0.25rem;
-    border: 0.5px solid #B776FF80;
+    border: 0.5px solid #b776ff;
     align-items: center;
     justify-content: space-between;
-
-.status-title {
+}
+.scanning-monitoring-app .accessibility-scanning .status .status-card .status-title {
     font-size: 20px;
     font-weight: 500;
     color: #420083;
+}
 
 @media only screen and (max-width: 912px) {
-    font-size: 16px;
+    .scanning-monitoring-app .accessibility-scanning .status .status-card .status-title {
+        font-size: 16px;
+    }
 }
-}
-
-.status-value {
+.scanning-monitoring-app .accessibility-scanning .status .status-card .status-value {
     font-size: 15px;
     font-weight: 500;
-
-.status-process {
+}
+.scanning-monitoring-app .accessibility-scanning .status .status-card .status-value .status-process {
     color: #420083;
 }
-
-span {
+.scanning-monitoring-app .accessibility-scanning .status .status-card .status-value span {
     font-size: 36px;
     font-weight: 700;
 }
 
 @media only screen and (max-width: 912px) {
-    font-size: 14px;
+    .scanning-monitoring-app .accessibility-scanning .status .status-card .status-value {
+        font-size: 14px;
+    }
 }
-
-img {
+.scanning-monitoring-app .accessibility-scanning .status .status-card .status-value img {
     margin-right: 5px;
 }
-
-
-.progress-bar {
+.scanning-monitoring-app .accessibility-scanning .status .status-card .status-value .progress-bar {
     width: 102px;
     height: 6px;
-    background: #E8D5FF;
+    background: #e8d5ff;
     border-radius: 3px;
     margin-top: 5px;
-
-.progress-fill {
+}
+.scanning-monitoring-app .accessibility-scanning .status .status-card .status-value .progress-bar .progress-fill {
     height: 100%;
     background: #420083;
     border-radius: 3px;
 }
-}
-
-.vilolations {
+.scanning-monitoring-app .accessibility-scanning .status .status-card .status-value .vilolations {
     font-size: 15px;
     font-weight: 400;
-    color: #000000;
+    color: #000;
     margin-top: 10px;
-
-span {
+}
+.scanning-monitoring-app .accessibility-scanning .status .status-card .status-value .vilolations span {
     font-size: 15px;
     font-weight: 500;
-    color: #9F0000;
+    color: #9f0000;
 }
-}
-}
-
-.status-progress {
+.scanning-monitoring-app .accessibility-scanning .status .status-card .status-progress {
     font-size: 15px;
     font-weight: 700;
-    color: #9F0000;
+    color: #9f0000;
 }
-}
-}
-
-.divider {
+.scanning-monitoring-app .accessibility-scanning .divider {
     border: none;
-    border-top: 1px solid #EAD5FF;
+    border-top: 1px solid #ead5ff;
     margin-bottom: 30px;
     margin-top: 0;
 }
-
-.plan {
+.scanning-monitoring-app .accessibility-scanning .plan {
     border: 1px solid #420083;
     border-radius: 10px;
     padding: 30px;
     margin-bottom: 10px;
     position: relative;
     background-color: #e7e8fe;
-    .page-background {
-        z-index: -1;
-        background-size: cover;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        border-radius: 10px;
-    }
-
-.plan-info {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-
-@media only screen and (max-width: 1199px) {
-    justify-content: center;
 }
-
-.plans-left {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-@media only screen and (max-width: 912px) {
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-.plan-type {
-    font-size: 20px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-
-.icon-circle {
-    background-color: #F7F1FF;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 15px;
-}
-}
-
-.plan-desc {
-    font-size: 16px;
-    font-weight: 400;
-
-ul {
-    margin-bottom: 0;
-}
-}
-
-.plan-badge {
-    background: #D1FFD3;
-    color: #006D04;
-    padding: 6px 15px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 500;
-    margin-left: 20px;
-
-@media only screen and (max-width: 912px) {
-    margin-top: 10px;
-    margin-left: 0;
-}
-}
-}
-
-.plans-right {
-@media only screen and (max-width: 912px) {
-    text-align: center;
-}
-
-.plan-renewal {
-    font-size: 16px;
-    font-weight: 500;
-    color: #420083;
-
-@media only screen and (max-width: 912px) {
-    font-size: 14px;
-}
-
-strong {
-    color: #030104;
-}
-}
-
-.cancel-btn {
-    margin-left: 20px;
-    background: #9F0000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 7px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 700;
-
-@media only screen and (max-width: 912px) {
-    margin-left: 0;
-    margin-top: 10px;
-}
-}
-}
-}
-}
-
-.pricing {
-    border: 1px solid #420083;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 17px;
-    margin-bottom: 30px;
-    position: relative;
-
-.page-background {
+.scanning-monitoring-app .accessibility-scanning .plan .page-background {
     z-index: -1;
     background-size: cover;
     position: absolute;
@@ -1071,18 +891,140 @@ strong {
     left: 0;
     border-radius: 10px;
 }
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
 
-.billing-toggle {
+@media only screen and (max-width: 1199px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info {
+        justify-content: center;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-type {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-type .icon-circle {
+    background-color: #f7f1ff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-desc {
+    font-size: 16px;
+    font-weight: 400;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-desc ul {
+    margin-bottom: 0;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-badge {
+    background: #d1ffd3;
+    color: #006d04;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-left .plan-badge {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right {
+        text-align: center;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .plan-renewal {
+    font-size: 16px;
+    font-weight: 500;
+    color: #420083;
+}
+
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .plan-renewal {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .plan-renewal strong {
+    color: #030104;
+}
+.scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .cancel-btn {
+    margin-left: 20px;
+    background: #9f0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .plan .plan-info .plans-right .cancel-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .pricing {
+    border: 1px solid #420083;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .page-background {
+    z-index: -1;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-
-@media only screen and (max-width: 912px) {
-    flex-direction: column;
 }
 
-.save {
-    background-color: #913BEF;
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle {
+        flex-direction: column;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .save {
+    background-color: #913bef;
     border-radius: 20px;
     color: #fff;
     font-size: 16px;
@@ -1090,30 +1032,26 @@ strong {
     padding: 8px 16px;
     margin-left: 5px;
 }
-
-.label {
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .label {
     font-weight: 700;
     font-size: 18px;
-    color: #000000;
-
-&.active {
-     color: #420083;
- }
+    color: #000;
 }
-
-.switch {
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .label.active {
+    color: #420083;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch {
     position: relative;
     display: inline-block;
     width: 40px;
     height: 20px;
-
-input {
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
-
-.slider {
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch .slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -1124,60 +1062,52 @@ input {
     border: 2px solid #420083;
     border-radius: 34px;
     transition: 0.3s;
-
-&::before {
-     content: "";
-     position: absolute;
-     height: 14px;
-     width: 14px;
-     left: 3px;
-     bottom: 2px;
-     background-color: #420083;
-     border-radius: 50%;
-     transition: 0.3s;
- }
 }
-
-input:checked+.slider {
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch .slider::before {
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 2px;
     background-color: #420083;
-
-&::before {
-     transform: translateX(18px);
-     background-color: white;
- }
+    border-radius: 50%;
+    transition: 0.3s;
 }
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch input:checked + .slider {
+    background-color: #420083;
 }
+.scanning-monitoring-app .accessibility-scanning .pricing .billing-toggle .switch input:checked + .slider::before {
+    transform: translateX(18px);
+    background-color: white;
 }
-
-.pricing-tiers {
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
-
-.tier {
-    background: #ffffff;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier {
+    background: #fff;
     border: 1px solid;
     border-radius: 10px;
     text-align: center;
     padding: 20px 30px;
     display: flex;
     flex-direction: column;
-
-.pricing-top {
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-top {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.pricing-header {
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-header {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     margin-right: 10px;
 }
-
-.icon-circle {
-    background-color: #F7F1FF;
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .icon-circle {
+    background-color: #f7f1ff;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -1185,65 +1115,54 @@ input:checked+.slider {
     justify-content: center;
     align-items: center;
 }
-
-.pricing-info {
-.tier-title {
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-info .tier-title {
     font-weight: 400;
     font-size: 16px;
     margin-bottom: 0;
     text-align: left;
 }
-
-.tier-pages {
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-info .tier-pages {
     font-weight: 700;
     font-size: 20px;
     margin-bottom: 0;
 }
-}
-
-.pricing-divider {
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-divider {
     margin: 20px 0;
 }
-
-.pricing-body {
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body {
     text-align: left;
     margin-bottom: 20px;
-
-.old-price {
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body .old-price {
     position: relative;
     display: inline-block;
-    color: #666666;
+    color: #666;
     font-size: 14px;
     font-weight: 400;
     margin: 0;
-
-&::after {
-     content: "";
-     position: absolute;
-     top: 43%;
-     left: -5%;
-     width: 110%;
-     height: 2px;
-     background-color: #CD0000;
-     transform: rotate(-14deg);
-     transform-origin: center;
- }
 }
-
-.new-price {
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body .old-price::after {
+    content: "";
+    position: absolute;
+    top: 43%;
+    left: -5%;
+    width: 110%;
+    height: 2px;
+    background-color: #cd0000;
+    transform: rotate(-14deg);
+    transform-origin: center;
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body .new-price {
     font-size: 24px;
     font-weight: 700;
     color: #420083;
     margin: 0;
-
-.per-year {
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .pricing-body .new-price .per-year {
     font-size: 1rem;
     font-weight: 400;
 }
-}
-}
-
-.upgrade-btn {
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-tiers .tier .upgrade-btn {
     background: #420083;
     color: white;
     border: none;
@@ -1253,77 +1172,62 @@ input:checked+.slider {
     font-size: 16px;
     font-weight: 700;
 }
-}
-}
-
-.pricing-contact {
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-contact {
     text-align: center;
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 0;
-
-@media only screen and (max-width: 912px) {
-    font-size: 14px;
 }
 
-a {
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .pricing .pricing-contact {
+        font-size: 14px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .pricing .pricing-contact a {
     color: #420083;
     text-decoration: none;
     font-weight: 700;
 }
-}
-}
-
-.help {
-    background: #FFF2B6;
+.scanning-monitoring-app .accessibility-scanning .help {
+    background: #fff2b6;
     border-radius: 10px;
     padding: 33px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-@media only screen and (max-width: 912px) {
-    flex-direction: column;
-    text-align: center;
 }
 
-.help-text {
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .help {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .help .help-text {
     display: flex;
     flex-direction: column;
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 0;
-
-@media only screen and (max-width: 912px) {
-    font-size: 14px;
-    margin-bottom: 10px;
 }
 
-strong {
+@media only screen and (max-width: 912px) {
+    .scanning-monitoring-app .accessibility-scanning .help .help-text {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
+.scanning-monitoring-app .accessibility-scanning .help .help-text strong {
     font-size: 24px;
     font-weight: 700;
+}
 
 @media only screen and (max-width: 912px) {
-    font-size: 18px;
+    .scanning-monitoring-app .accessibility-scanning .help .help-text strong {
+        font-size: 18px;
+    }
 }
-}
-}
-
-.help-btn {
-    background: #FFC107;
-    color: #000000;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 700;
-}
-}
-}
-}
-
 .scanning-monitoring-app .accessibility-scanning .help .help-btn {
     background: #ffc107;
     color: #000;
@@ -1333,65 +1237,65 @@ strong {
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
-    font-weight: 700
+    font-weight: 700;
 }
-
-a {
+.scanning-monitoring-app .accessibility-scanning .help .help-btn {
+    background: #ffc107;
+    color: #000;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+.skynet-accessibility-scanner a {
     text-decoration: none;
 }
-
-.wcag-stats {
+.skynet-accessibility-scanner .wcag-stats {
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
 }
-
-.wcag-box {
+.skynet-accessibility-scanner .wcag-box {
     flex: 1;
     padding: 15px;
     border-radius: 10px;
     text-align: center;
     background: #f9f9f9;
 }
-
-.wcag-box strong {
+.skynet-accessibility-scanner .wcag-box strong {
     font-size: 28px;
     display: block;
     margin-bottom: 5px;
 }
-
-.failed {
+.skynet-accessibility-scanner .failed {
     color: #c62828;
 }
-
-.passed {
+.skynet-accessibility-scanner .passed {
     color: #2e7d32;
 }
-
-.na {
+.skynet-accessibility-scanner .na {
     color: #616161;
 }
-
-.levels {
+.skynet-accessibility-scanner .levels {
     display: flex;
     gap: 20px;
 }
-
-.level-box {
+.skynet-accessibility-scanner .level-box {
     flex: 1;
     padding: 15px;
     border-radius: 10px;
     text-align: center;
     background: #e3f2fd;
 }
-
-.level-box strong {
+.skynet-accessibility-scanner .level-box strong {
     font-size: 22px;
     display: block;
     margin-bottom: 5px;
 }
-
-.back-btn {
+.skynet-accessibility-scanner .back-btn {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
@@ -1405,80 +1309,74 @@ a {
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
 }
-
-.back-btn:hover {
+.skynet-accessibility-scanner .back-btn:hover {
     background: #420083;
     /* Darker blue on hover */
     transform: translateY(-2px);
 }
-
-.back-btn:active {
+.skynet-accessibility-scanner .back-btn:active {
     transform: translateY(0);
 }
-
-.cancel-btnn {
-    background-color: #fff !important;
+.skynet-accessibility-scanner .cancel-btnn {
+    background-color: #fff;
     /* white background */
-    color: #a30000 !important;
+    color: #a30000;
     /* red text */
-    border: 1.5px solid #a30000 !important;
+    border: 1.5px solid #a30000;
     /* red border */
-    padding: 10px 30px !important;
+    padding: 10px 30px;
     /* padding */
-    border-radius: 6px !important;
+    border-radius: 6px;
     /* rounded edges */
-    font-weight: bold !important;
-    font-size: 16px !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-    width: 100% !important;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
     /* full width like your screenshot */
-    display: block !important;
-    text-align: center !important;
+    display: block;
+    text-align: center;
 }
-
-.cancel-btnn:hover {
-    background-color: #a30000 !important;
+.skynet-accessibility-scanner .cancel-btnn:hover {
+    background-color: #a30000;
     /* red bg on hover */
-    color: #fff !important;
+    color: #fff;
     /* white text on hover */
 }
-
-#content {
-    padding-bottom: 10px !important;
+.skynet-accessibility-scanner #content {
+    padding-bottom: 10px;
 }
-
 /* Full page loader */
-.plugin-wrapper {
+.skynet-accessibility-scanner .plugin-wrapper {
     position: relative;
 }
-.page-loader {
+.skynet-accessibility-scanner .page-loader {
     position: absolute;
     inset: 0;
     /* Soft light overlay */
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border-radius: 12px;   /* match your card radius */
+    border-radius: 12px;
+    /* match your card radius */
     z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: opacity 0.3s ease;
 }
-
 /* Loader box */
-.loader-box {
+.skynet-accessibility-scanner .loader-box {
     text-align: center;
-    color: #444;   /* darker text for light background */
+    color: #444;
+    /* darker text for light background */
     font-size: 16px;
 }
-
 /* Spinner */
-.spinner {
+.skynet-accessibility-scanner .spinner {
     width: 48px;
     height: 48px;
-    border: 4px solid rgba(255,255,255,0.2);
+    border: 4px solid rgba(255, 255, 255, 0.2);
     border-top-color: #9b5cff;
     border-radius: 50%;
     animation: spin 1s linear infinite;
@@ -1486,13 +1384,13 @@ a {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
-
-.page-loader.hidden {
+.skynet-accessibility-scanner .page-loader.hidden {
     display: none;
 }
-
-.Form > .Form-group .Button.Button--primary {
-    display: none !important;
+.skynet-accessibility-scanner .Form > .Form-group .Button.Button--primary {
+    display: none;
 }
