@@ -32,7 +32,7 @@ use core_privacy\local\metadata\collection;
  * @copyright 2024 Rajesh Bhimani <developer3@skynettechnologies.com>
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class provider implements widget_default_features, \core_privacy\local\metadata\provider {
+class provider implements \core_privacy\local\metadata\provider {
     /**
      * Returns metadata about the personal data this plugin stores.
      *
